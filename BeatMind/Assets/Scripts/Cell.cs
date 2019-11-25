@@ -8,7 +8,7 @@ public class Cell : MonoBehaviour
     
     public void ChangeState()
     { 
-        //Cambiar el sprite
+        //TO DO: Cambiar el sprite
         //Gestionar cuantas notas le quedan al player
         note = !note;
     }
