@@ -14,6 +14,7 @@ public class Turn : MonoBehaviour
     private float _distance = 50f;
     private void Start()
     {
+        Debug.Log("Eiiiii");
         rows = Assignations.Instance.ReturnRows();
         columns = Assignations.Instance.instrumentsNumber;
 
