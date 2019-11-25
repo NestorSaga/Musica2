@@ -69,11 +69,13 @@ public class Turn : MonoBehaviour
         if(turnState == TTurnState.COMPOSING)
         {
             //Lanzar evento de cambio de player
+            //Reinicializar los materiales o el color al inicial
             turnState = TTurnState.RESOLVING;
         }
         else
         {
             //Lanzar evento de resolver
+
             GameManager.Instance.EndTurn();
         }
     }
