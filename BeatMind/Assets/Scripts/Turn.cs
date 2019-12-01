@@ -77,4 +77,31 @@ public class Turn : MonoBehaviour
         }
     }
 
+
+    public void Resolve()
+    {
+        for (int i = 0; i < GameManager.Instance.currentTurn.transform.childCount; i++)
+        {
+
+            if (GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resolver && GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().composer)
+            {
+               //guay, ha acertado input positivo
+            }
+            else if (!GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resolver && GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().composer)
+            {
+                //Estaba pero no la ha acertado input negativo, se resta vida
+                if (GameManager.Instance.getPlayerinTurn() == 1)
+                {
+                    GameManager.Instance.p2Life--;
+                }
+                else GameManager.Instance.p1Life--;
+            }
+            else
+            {
+                //No hay un cagao, 
+            }
+            GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resetCell();
+        }
+    }
+
 }

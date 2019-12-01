@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     private bool listening;
     private int currentRow;
 
+    public int p1Life;
+    public int p2Life;
+
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
     //Scipt que sigui Turn() que el que faci sigui inicialitzar la matriu de notes i guardar quines han estat col·locades
 
@@ -135,6 +138,8 @@ public class GameManager : MonoBehaviour
         currentRow++;
     }
 
+
+
     void PlayInstrument(GameObject cell)
     {
         switch (cell.tag)
@@ -159,6 +164,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (currentRow != ReturnRows())
             Play();
+    }
+
+    public int getPlayerinTurn()
+    {
+        if (playerInTurn == TPlayerInTurn.P2)
+        {
+            return 2;
+        }
+        else return 1;
     }
 
 }
