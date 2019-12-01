@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     private bool listening;
     private int currentRow;
 
+    public int p1Life;
+    public int p2Life;
+
     private int tempo;
 
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
@@ -136,6 +139,8 @@ public class GameManager : MonoBehaviour
         currentRow++;
     }
 
+
+
     void PlayInstrument(GameObject cell)
     {
         switch (cell.tag)
@@ -163,6 +168,15 @@ public class GameManager : MonoBehaviour
             Listen();
         else
             listening = false;
+    }
+
+    public int getPlayerinTurn()
+    {
+        if (playerInTurn == TPlayerInTurn.P2)
+        {
+            return 2;
+        }
+        else return 1;
     }
 
 }
