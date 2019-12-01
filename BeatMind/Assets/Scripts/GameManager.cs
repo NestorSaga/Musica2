@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < currentTurn.transform.childCount; i++)
         {
-            if (currentTurn.transform.GetChild(i).GetComponent<Cell>().note)
+            if (currentTurn.transform.GetChild(i).GetComponent<Cell>().hasNote)
                 PlayInstrument(currentTurn.transform.GetChild(i).gameObject);
         }
     }

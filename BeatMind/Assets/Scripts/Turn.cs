@@ -38,6 +38,16 @@ public class Turn : MonoBehaviour
         }
     }
 
+    public string getState()
+    {
+        if (turnState == TTurnState.COMPOSING)
+        {
+            //Lanzar evento de cambio de player
+            return "Composing";
+        }
+        else return "Resolving";
+    }
+
     private void Update()
     {
         if (turnState == TTurnState.COMPOSING)
