@@ -152,10 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnPrefab: {fileID: 5889078607242947228, guid: ea66c7470a360ac4ab7a3ee430d0a690,
     type: 3}
-  p1StartingNotes: 3
-  p2StartingNotes: 3
+  startingNotes: 3
   turnNumber: 0
   currentTurn: {fileID: 0}
+  currentNotes: 0
 --- !u!4 &103730576
 Transform:
   m_ObjectHideFlags: 0
@@ -214,6 +214,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352991504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352991505}
+  - component: {fileID: 352991506}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &352991505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352991504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352991506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352991504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a59d0f4c3c8b7e4ba32a01cad983926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    name: Cymbal
+    clip: {fileID: 8300000, guid: 0111749ac97459843a5c6b5f39153ebf, type: 3}
+    loop: 0
+  - source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    name: Trumpet
+    clip: {fileID: 8300000, guid: 02c547138bfe2f54abad0b7d7e811ac8, type: 3}
+    loop: 0
+  - source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    name: Violin
+    clip: {fileID: 8300000, guid: d45af33e9e0e31a4a9da56cee893dffc, type: 3}
+    loop: 0
+  - source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    name: Choir
+    clip: {fileID: 8300000, guid: c10ae604584a7fd4784c916cdda44409, type: 3}
+    loop: 0
 --- !u!1 &401059311
 GameObject:
   m_ObjectHideFlags: 0

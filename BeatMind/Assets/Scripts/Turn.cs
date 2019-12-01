@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turn : MonoBehaviour
 {    
     int rows;
-    GameObject[] cells;
+    public GameObject[] cells;
     public GameObject cellPrefab;
     public float _distBetweenRows = 2; //La distancia a la que quieres que se instancie la siguiente fila. Habría que calcular cuánto mide el sprite siguiente y eso.
     public Transform InitPos;
@@ -21,7 +21,7 @@ public class Turn : MonoBehaviour
     private void Start()
     {
         turnState = TTurnState.COMPOSING;
-        rows = Assignations.Instance.ReturnRows();       
+        rows = GameManager.Instance.ReturnRows();       
 
         cells = new GameObject[rows];
 
