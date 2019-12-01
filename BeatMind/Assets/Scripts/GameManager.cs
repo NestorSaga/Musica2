@@ -36,12 +36,10 @@ public class GameManager : MonoBehaviour
     private bool listening;
     private int currentRow;
 
-<<<<<<< HEAD
     public int p1Life;
     public int p2Life;
-=======
+
     private int tempo;
->>>>>>> 9a3785c1f462d12727e1e10ac8eac94c3738ffde
 
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
     //Scipt que sigui Turn() que el que faci sigui inicialitzar la matriu de notes i guardar quines han estat col·locades

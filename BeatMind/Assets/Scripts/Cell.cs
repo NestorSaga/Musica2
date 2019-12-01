@@ -28,7 +28,21 @@ public class Cell : MonoBehaviour
         }
         else //añadir condicion de si no te quedan notas no lo pongan
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            switch (this.gameObject.tag)
+            {
+                case "Cymbal":
+                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                    break;
+                case "Violin":
+                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                    break;
+                case "Trumpet":
+                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    break;
+                default:
+                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                    break;
+            }
             //acceder al turno para restarle notas
             GameManager.Instance.currentNotes--;
             if (GameManager.Instance.currentTurn.GetComponent<Turn>().getState() == "Composing")
