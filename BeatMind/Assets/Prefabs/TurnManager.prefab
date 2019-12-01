@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1added849bb411543998bfff88390417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 5521317423693542209, guid: d173dcfbc995fde49b9afa4f73948b7b,
+  cellPrefab: {fileID: 2451449249122851379, guid: 9c17d3b238eda724a8c3636403189871,
     type: 3}
-  _distBetweenRows: 1
+  _distBetweenRows: 2.2
   InitPos: {fileID: 1501463153573913827, guid: 72d491dabdd315b4794e23bb94ce575e, type: 3}
+  turnState: 0

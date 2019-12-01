@@ -28,11 +28,12 @@ public class Turn : MonoBehaviour
         float l_Dist = 0;
 
         //TO DO: Sistema para arrastrar la grid  
+        InitPos = GameObject.Find("InitPos").transform;
 
 
         for(int i = 0; i<cells.GetLength(0); i++)
         {            
-            cells[i] = Instantiate(cellPrefab, InitPos.position + new Vector3(0, l_Dist, 0), Quaternion.identity, transform);            
+            cells[i] = Instantiate(cellPrefab, InitPos.position + new Vector3(0, l_Dist, -3), Quaternion.identity, transform);            
             l_Dist += _distBetweenRows;
         }
     }
@@ -47,6 +48,7 @@ public class Turn : MonoBehaviour
             if (Physics.Raycast(ray, out hit, _distance))
             {                                   
                 Debug.Log(hit.collider.name);
+                
                 if (hit.collider.GetComponent<Cell>() != null )
                 {
                     if (turnState == TTurnState.COMPOSING)
