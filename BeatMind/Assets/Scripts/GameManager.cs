@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     private bool listening;
     private int currentRow;
 
+    private int tempo;
+
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
     //Scipt que sigui Turn() que el que faci sigui inicialitzar la matriu de notes i guardar quines han estat col·locades
 
@@ -65,6 +67,12 @@ public class GameManager : MonoBehaviour
         listening = false;
 
         initialRowsNumber = Assignations.Instance.initialRowsNumber;
+
+        // El tempo tiene que depender de la dificultad:
+        // EASY --> tempo = 4
+        // MEDIUM --> tempo = 2
+        // DIFFICULT --> tempo = 1
+        tempo = 1;
     }
 
   
@@ -75,10 +83,11 @@ public class GameManager : MonoBehaviour
             EndTurn();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !listening)
         {
             currentRow = 0;
-            Play();
+            listening = true;
+            Listen();
         }
     }
 
@@ -114,21 +123,13 @@ public class GameManager : MonoBehaviour
         return turnNumber + initialRowsNumber - 1;
     }
 
-    public void Listen()
-    {
-        for (int i = 0; i < ReturnRows(); i++)
-        {
-
-        }
-    }
-
-    void Play()
+    void Listen()
     {
         for (int i = 0; i < currentTurn.transform.childCount; i++)
         {
 
-            if (currentTurn.transform.GetChild(i).GetComponent<Cell>().hasNote)
-                PlayInstrument(currentTurn.transform.GetChild(i).gameObject);
+            if (currentTurn.transform.GetChild(currentRow).transform.GetChild(i).GetComponent<Cell>().hasNote)
+                PlayInstrument(currentTurn.transform.GetChild(currentRow).transform.GetChild(i).gameObject);
 
         }
         StartCoroutine(PlayNotes());
@@ -156,9 +157,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PlayNotes()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(tempo);
+        audioManager.StopAll();
         if (currentRow != ReturnRows())
-            Play();
+            Listen();
+        else
+            listening = false;
     }
 
 }
