@@ -29,9 +29,4 @@ public class Assignations : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
-
-    public int ReturnRows()
-    {
-        return GameManager.Instance.turnNumber + initialRowsNumber - 1;
-    }
 }

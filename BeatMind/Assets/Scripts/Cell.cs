@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {    
-    [SerializeField] private bool note = false;
+    public bool note = false;
 
     private void Start()
     {
@@ -17,13 +17,13 @@ public class Cell : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
             //acceder al turno para sumarle notas
-            GameManager.Instance.CurrentNotes++;
+            GameManager.Instance.currentNotes++;
         }
         else //añadir condicion de si no te quedan notas no lo pongan
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             //acceder al turno para restarle notas
-            GameManager.Instance.CurrentNotes--;
+            GameManager.Instance.currentNotes--;
         }
         note = !note;
     }
