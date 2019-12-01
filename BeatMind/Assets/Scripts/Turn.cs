@@ -32,7 +32,7 @@ public class Turn : MonoBehaviour
 
 
         for(int i = 0; i<cells.GetLength(0); i++)
-        {            
+        {
             cells[i] = Instantiate(cellPrefab, InitPos.position + new Vector3(0, l_Dist, -3), Quaternion.identity, transform);            
             l_Dist += _distBetweenRows;
         }
@@ -40,20 +40,24 @@ public class Turn : MonoBehaviour
 
     private void Update()
     {
-       
+        
     }
-
     public void ButtonChangesTurnState()
     {
         if(turnState == TTurnState.COMPOSING)
         {
             //Lanzar evento de cambio de player
-            //Reinicializar los materiales o el color al inicial
+
+
+
+
+
             turnState = TTurnState.RESOLVING;
         }
         else
         {
             //Lanzar evento de resolver
+            //Reinicializar los materiales o el color al inicial
 
             GameManager.Instance.EndTurn();
         }

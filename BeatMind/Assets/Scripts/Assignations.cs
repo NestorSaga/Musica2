@@ -26,7 +26,6 @@ public class Assignations : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
@@ -35,6 +34,4 @@ public class Assignations : MonoBehaviour
     {
         return GameManager.Instance.turnNumber + initialRowsNumber - 1;
     }
-
-
 }
