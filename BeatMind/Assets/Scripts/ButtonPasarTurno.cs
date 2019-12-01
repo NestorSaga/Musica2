@@ -18,6 +18,6 @@ public class ButtonPasarTurno : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GameObject.Find("GameManager").GetComponent<GameManager>().EndTurn();
+        GameObject.Find("GameManager").GetComponent<GameManager>().currentTurn.GetComponent<Turn>().ButtonChangesTurnState();
     }
 }
