@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private int initialRowsNumber;
 
     private bool listening;
+    private int currentRow;
 
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
     //Scipt que sigui Turn() que el que faci sigui inicialitzar la matriu de notes i guardar quines han estat col·locades
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            currentRow = 0;
             Play();
         }
     }
@@ -124,9 +126,11 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < currentTurn.transform.childCount; i++)
         {
-            if (currentTurn.transform.GetChild(i).GetComponent<Cell>().note)
-                PlayInstrument(currentTurn.transform.GetChild(i).gameObject);
+            if (currentTurn.transform.GetChild(currentRow).transform.GetChild(i).GetComponent<Cell>().note)
+                PlayInstrument(currentTurn.transform.GetChild(currentRow).transform.GetChild(i).gameObject);
         }
+        StartCoroutine(PlayNotes());
+        currentRow++;
     }
 
     void PlayInstrument(GameObject cell)
@@ -151,7 +155,8 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayNotes()
     {
         yield return new WaitForSeconds(1);
-        Play();
+        if (currentRow != ReturnRows())
+            Play();
     }
 
 }
