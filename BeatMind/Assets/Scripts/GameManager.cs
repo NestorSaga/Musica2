@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject TurnPrefab;
-    public int p1StartingNotes = 3;
-    public int p2StartingNotes = 3;
+    public int StartingNotes = 3;
     public int turnNumber = 1;
     private List<GameObject> turn = new List<GameObject>();
 
@@ -29,8 +28,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentTurn;
 
-    private int _p1CurrentNotes;
-    private int _p2CurrentNotes;
+    public int CurrentNotes;
+
     
 
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
@@ -55,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         turnNumber = 1;
         InitTurn();
+        CurrentNotes = StartingNotes;
     }
 
   

@@ -40,7 +40,11 @@ public class Turn : MonoBehaviour
 
     private void Update()
     {
-        
+        if (turnState == TTurnState.COMPOSING)
+        {
+            //Lanzar evento de cambio de player
+          
+        }
     }
     public void ButtonChangesTurnState()
     {

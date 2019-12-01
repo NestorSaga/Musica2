@@ -17,11 +17,13 @@ public class Cell : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
             //acceder al turno para sumarle notas
+            GameManager.Instance.CurrentNotes++;
         }
         else //añadir condicion de si no te quedan notas no lo pongan
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             //acceder al turno para restarle notas
+            GameManager.Instance.CurrentNotes--;
         }
         note = !note;
     }
