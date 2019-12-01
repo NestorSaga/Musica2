@@ -40,30 +40,7 @@ public class Turn : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //create a ray cast and set it to the mouses cursor position in game
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, _distance))
-            {                                   
-                Debug.Log(hit.collider.name);
-                
-                if (hit.collider.GetComponent<Cell>() != null )
-                {
-                    if (turnState == TTurnState.COMPOSING)
-                    {
-                        //Código de componer
-                        hit.collider.GetComponent<Cell>().ChangeState();
-                    }
-                    else
-                    {
-                        //Código de guessear
-                    }
-                }
-
-            }
-        }
+       
     }
 
     public void ButtonChangesTurnState()

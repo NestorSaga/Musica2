@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Violin
+  - Cymbal
+  - Choir
+  - Trumpet
   layers:
   - Default
   - TransparentFX

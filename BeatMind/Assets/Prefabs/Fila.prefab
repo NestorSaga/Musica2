@@ -46,6 +46,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: backgroundTrim (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8009327833104800976, guid: 2aa5a91a953f0d749a35e938c593e13a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Violin
+      objectReference: {fileID: 0}
     - target: {fileID: 8009327833104801006, guid: 2aa5a91a953f0d749a35e938c593e13a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,6 +125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: backgroundTrim (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009327833104800976, guid: 2aa5a91a953f0d749a35e938c593e13a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Choir
       objectReference: {fileID: 0}
     - target: {fileID: 8009327833104801006, guid: 2aa5a91a953f0d749a35e938c593e13a,
         type: 3}
@@ -196,6 +206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: backgroundTrim (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8009327833104800976, guid: 2aa5a91a953f0d749a35e938c593e13a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trumpet
+      objectReference: {fileID: 0}
     - target: {fileID: 8009327833104801006, guid: 2aa5a91a953f0d749a35e938c593e13a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: backgroundTrim
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009327833104800976, guid: 2aa5a91a953f0d749a35e938c593e13a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cymbal
       objectReference: {fileID: 0}
     - target: {fileID: 8009327833104801006, guid: 2aa5a91a953f0d749a35e938c593e13a,
         type: 3}

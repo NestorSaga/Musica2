@@ -10,17 +10,7 @@ public class Cell : MonoBehaviour
     {
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
     }
-
-
-    public void ChangeState()
-    {
-        //TO DO: Cambiar el sprite
-        
-
-
-        //Gestionar cuantas notas le quedan al player
-       
-    }
+   
     private void OnMouseDown()
     {
         if (note)
