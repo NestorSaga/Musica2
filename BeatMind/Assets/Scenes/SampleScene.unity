@@ -229,6 +229,8 @@ MonoBehaviour:
   turnNumber: 0
   currentTurn: {fileID: 0}
   currentNotes: 0
+  p1Life: 0
+  p2Life: 0
 --- !u!4 &103730576
 Transform:
   m_ObjectHideFlags: 0
@@ -730,25 +732,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - source: {fileID: 0}
-    volume: 1
+    volume: 0.3
     pitch: 1
     name: Cymbal
     clip: {fileID: 8300000, guid: 0111749ac97459843a5c6b5f39153ebf, type: 3}
     loop: 0
   - source: {fileID: 0}
-    volume: 1
+    volume: 0.3
     pitch: 1
     name: Trumpet
     clip: {fileID: 8300000, guid: 02c547138bfe2f54abad0b7d7e811ac8, type: 3}
     loop: 0
   - source: {fileID: 0}
-    volume: 1
+    volume: 0.2
     pitch: 1
     name: Violin
     clip: {fileID: 8300000, guid: d45af33e9e0e31a4a9da56cee893dffc, type: 3}
     loop: 0
   - source: {fileID: 0}
-    volume: 1
+    volume: 0.3
     pitch: 1
     name: Choir
     clip: {fileID: 8300000, guid: c10ae604584a7fd4784c916cdda44409, type: 3}
