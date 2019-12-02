@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/1_DifficultyPlusReady.unity
     guid: e3f9750715412564db5d8283920455d8
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/EscenaDavid.unity
+    guid: 8b95ff68482877048a2bca659baab9d4
   - enabled: 1
     path: Assets/Scenes/3_End.unity
     guid: de93610c31b5b3e4ea4815d8da526f87

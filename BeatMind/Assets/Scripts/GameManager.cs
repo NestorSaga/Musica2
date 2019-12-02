@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     AudioManager audioManager;
     PopulateGrid grid;
     public Animator flechaAnim;
+
+    
+
     public static GameManager Instance
     {
         get
@@ -96,20 +99,13 @@ public class GameManager : MonoBehaviour
     {
         flechaAnim.SetInteger("Notes", currentNotes);
         notesText.text = currentNotes.ToString();
-        p1LifeText.GetComponent<Text>().text = p1Life.ToString();
-        p2LifeText.GetComponent<Text>().text = p2Life.ToString();
+        p1LifeText.GetComponent<Image>().fillAmount = (float) p1Life / Assignations.Instance.initialLife;
+        p2LifeText.GetComponent<Image>().fillAmount = (float) p2Life / Assignations.Instance.initialLife;
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
             EndTurn();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && !listening)
-        {
-            currentRow = 0;
-            listening = true;
-            Listen();
-        }
+        }        
     }
 
     public void InitTurn()
