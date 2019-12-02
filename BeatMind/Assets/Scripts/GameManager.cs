@@ -134,13 +134,14 @@ public class GameManager : MonoBehaviour
 
     void Listen()
     {
-        for (int i = 0; i < currentTurn.transform.childCount; i++)
+        for (int i = 0; i < grid.transform.GetChild(currentRow).transform.childCount; i++)
         {
-
-            if (currentTurn.transform.GetChild(currentRow).transform.GetChild(i).GetComponent<Cell>().hasNote)
-                PlayInstrument(currentTurn.transform.GetChild(currentRow).transform.GetChild(i).gameObject);
-
+            if (grid.transform.GetChild(currentRow).GetChild(i).GetComponent<Cell>().hasNote)
+            {
+                PlayInstrument(grid.transform.GetChild(currentRow).GetChild(i).gameObject);
+            }
         }
+
         StartCoroutine(PlayNotes());
         currentRow++;
     }

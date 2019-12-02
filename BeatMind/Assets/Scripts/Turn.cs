@@ -65,13 +65,11 @@ public class Turn : MonoBehaviour
         {
             //Lanzar evento de cambio de player
             //Volver todas las celdas a color negro
-            for(int i = 0; i< this.transform.childCount; i++)
-            {
-                for(int j = 0; j < this.transform.GetChild(i).transform.childCount; j++)
-                {
-                    this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().GoBlack();
-                    this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().hasNote = false;
-                }
+
+            foreach (Transform a in grid.transform)
+            {                
+                a.transform.GetComponent<Cell>().GoBlack();
+                a.transform.GetComponent<Cell>().hasNote = false;            
             }
 
             if (GameManager.Instance.getPlayerinTurn() == 1)
@@ -79,8 +77,14 @@ public class Turn : MonoBehaviour
                 GameManager.Instance.UpdateText("p2");
             }
             else GameManager.Instance.UpdateText("p1");
+
+                
+            }            
+
+
             turnState = TTurnState.RESOLVING;
         }
+
         else
         {
             //Lanzar evento de resolver
