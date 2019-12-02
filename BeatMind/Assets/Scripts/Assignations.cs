@@ -11,7 +11,7 @@ public class Assignations : MonoBehaviour
             return instance;
         }
     }
-
+    public int initialLife = 10;
     public int instrumentsNumber = 4;
     public int initialRowsNumber = 4;
     //Quantes notes se li dona a cada jugador al començament

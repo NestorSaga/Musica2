@@ -68,12 +68,12 @@ public class Turn : MonoBehaviour
             GameManager.Instance.PlayMusic();
             foreach (Transform a in grid.transform)
             {
-                for(int i = 0; i< a.transform.childCount; i++)
+                for (int i = 0; i < a.transform.childCount; i++)
                 {
                     a.transform.GetChild(i).GetComponent<Cell>().GoBlack();
                     a.transform.GetChild(i).GetComponent<Cell>().hasNote = false;
-                }                
-            }            
+                }
+            }
 
             if (GameManager.Instance.getPlayerinTurn() == 1)
             {
@@ -81,7 +81,7 @@ public class Turn : MonoBehaviour
             }
             else GameManager.Instance.UpdateText("p1");
             turnState = TTurnState.RESOLVING;
-        }      
+        }
 
         else
         {
@@ -96,27 +96,29 @@ public class Turn : MonoBehaviour
 
     public void Resolve()
     {
-        for (int i = 0; i < GameManager.Instance.currentTurn.transform.childCount; i++)
+        foreach (Transform a in grid.transform)
         {
-
-            if (GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resolver && GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().composer)
+            for (int j = 0; j < a.transform.childCount; j++)
             {
-               //guay, ha acertado input positivo
-            }
-            else if (!GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resolver && GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().composer)
-            {
-                //Estaba pero no la ha acertado input negativo, se resta vida
-                if (GameManager.Instance.getPlayerinTurn() == 1)
+                if (a.transform.GetChild(j).GetComponent<Cell>().resolver && a.transform.GetChild(j).GetComponent<Cell>().composer)
                 {
-                    GameManager.Instance.p2Life--;
+                    //guay, ha acertado input positivo
                 }
-                else GameManager.Instance.p1Life--;
+                else if (!a.transform.GetChild(j).GetComponent<Cell>().resolver && a.transform.GetChild(j).GetComponent<Cell>().composer)
+                {
+                    //Estaba pero no la ha acertado input negativo, se resta vida
+                    if (GameManager.Instance.getPlayerinTurn() == 1)
+                    {
+                        GameManager.Instance.p2Life--;
+                    }
+                    else GameManager.Instance.p1Life--;
+                }
+                else
+                {
+                    //No hay un cagao, 
+                }
+                GameManager.Instance.currentTurn.transform.GetChild(j).GetComponent<Cell>().resetCell();
             }
-            else
-            {
-                //No hay un cagao, 
-            }
-            GameManager.Instance.currentTurn.transform.GetChild(i).GetComponent<Cell>().resetCell();
         }
     }
 

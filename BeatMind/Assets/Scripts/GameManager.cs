@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject p1Text;
     public GameObject p2Text;
+
+    public GameObject p1LifeText;
+    public GameObject p2LifeText;
+
     public Text notesText;
 
     public enum TPlayerInTurn
@@ -69,6 +73,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        p1Life = Assignations.Instance.initialLife;
+        p2Life = Assignations.Instance.initialLife;
+
         turnNumber = 1;
         InitTurn();
         currentNotes = startingNotes;
@@ -89,8 +96,10 @@ public class GameManager : MonoBehaviour
     {
         flechaAnim.SetInteger("Notes", currentNotes);
         notesText.text = currentNotes.ToString();
+        p1LifeText.GetComponent<Text>().text = p1Life.ToString();
+        p2LifeText.GetComponent<Text>().text = p2Life.ToString();
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             EndTurn();
         }
