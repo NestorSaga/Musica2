@@ -156,6 +156,8 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(PlayNotes());
         currentRow++;
+        audioManager.Play("Tic");
+        StartCoroutine(Metronome());
     }
 
 
@@ -203,6 +205,19 @@ public class GameManager : MonoBehaviour
             Listen();
         else
             listening = false;
+    }
+
+    int metronomeCounter = 1;
+
+    IEnumerator Metronome()
+    {
+        yield return new WaitForSeconds(tempo / 4f);
+        audioManager.Play("Tac");
+        metronomeCounter++;
+        if (metronomeCounter < 4)
+            StartCoroutine(Metronome());
+        else
+            metronomeCounter = 1;
     }
 
     public int getPlayerinTurn()

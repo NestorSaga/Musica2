@@ -50,7 +50,7 @@ MonoBehaviour:
     pitch: 1
     name: Starting Menu Music
     clip: {fileID: 8300000, guid: 44ddc98eeeebbb6428ff8792cbae2145, type: 3}
-    loop: 0
+    loop: 1
   - source: {fileID: 0}
     volume: 0.3
     pitch: 1
@@ -74,4 +74,16 @@ MonoBehaviour:
     pitch: 1
     name: Choir
     clip: {fileID: 8300000, guid: c10ae604584a7fd4784c916cdda44409, type: 3}
+    loop: 0
+  - source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    name: Tic
+    clip: {fileID: 8300000, guid: 3eb06c2e2e7a23e49a9ff199237a56ce, type: 3}
+    loop: 0
+  - source: {fileID: 0}
+    volume: 0.3
+    pitch: 1
+    name: Tac
+    clip: {fileID: 8300000, guid: e486bb02bd833774c9a2c4407351e53d, type: 3}
     loop: 0
