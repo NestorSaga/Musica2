@@ -197,8 +197,9 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayNotes()
     {
         yield return new WaitForSeconds(tempo);
+        Debug.Log("Deberia hacer un sonido");
         audioManager.StopAll();
-        if (currentRow != ReturnRows())
+        if (currentRow != ReturnRows() + initialRowsNumber)
             Listen();
         else
             listening = false;

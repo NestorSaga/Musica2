@@ -73,9 +73,7 @@ public class Turn : MonoBehaviour
                     a.transform.GetChild(i).GetComponent<Cell>().GoBlack();
                     a.transform.GetChild(i).GetComponent<Cell>().hasNote = false;
                 }                
-            }
-
-            
+            }            
 
             if (GameManager.Instance.getPlayerinTurn() == 1)
             {
@@ -83,7 +81,6 @@ public class Turn : MonoBehaviour
             }
             else GameManager.Instance.UpdateText("p1");
             turnState = TTurnState.RESOLVING;
-
         }      
 
         else
