@@ -88,7 +88,6 @@ public class Turn : MonoBehaviour
         {
             //Lanzar evento de resolver
             //Reinicializar los materiales o el color al inicial
-
             GameManager.Instance.EndTurn();
         }
     }
