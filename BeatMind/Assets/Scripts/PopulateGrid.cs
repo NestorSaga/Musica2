@@ -15,7 +15,7 @@ public class PopulateGrid : MonoBehaviour
     {
         GameObject newObj;
 
-        for(int i = 0; i < quantity; i++)
+        for(int i = 0; i < quantity + GameObject.Find("GameManager").GetComponent<Assignations>().initialRowsNumber; i++)
         {
             count++;
             newObj = (GameObject)Instantiate(prefab, transform);
