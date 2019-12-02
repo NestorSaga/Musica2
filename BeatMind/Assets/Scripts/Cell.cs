@@ -27,35 +27,42 @@ public class Cell : MonoBehaviour
                 composer = false;
             }
             else resolver = false;
+            hasNote = !hasNote;
         }
 
         else //añadir condicion de si no te quedan notas no lo pongan
         {
-            switch (this.gameObject.tag)
+            if (GameManager.Instance.currentNotes > 0)
             {
-                case "Cymbal":
-                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    break;
-                case "Violin":
-                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                    break;
-                case "Trumpet":
-                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                    break;
-                default:
-                    this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-                    break;
-            }
+                switch (this.gameObject.tag)
+                {
+                    case "Cymbal":
+                        this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                        break;
+                    case "Violin":
+                        this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                        break;
+                    case "Trumpet":
+                        this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                        break;
+                    default:
+                        this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        break;
+                }
 
-            //acceder al turno para restarle notas
-            GameManager.Instance.currentNotes--;
-            if (GameManager.Instance.currentTurn.GetComponent<Turn>().getState() == "Composing")
-            {
-                composer = true;
+                //acceder al turno para restarle notas
+                GameManager.Instance.currentNotes--;
+                if (GameManager.Instance.currentTurn.GetComponent<Turn>().getState() == "Composing")
+                {
+                    composer = true;
+                }
+                else resolver = true;
+                hasNote = !hasNote;
             }
-            else resolver = true;
+            
         }
-        hasNote = !hasNote;
+        
+        
     }
 
     public void GoBlack()

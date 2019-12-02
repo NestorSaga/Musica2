@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     AudioManager audioManager;
     PopulateGrid grid;
-
+    public Animator flechaAnim;
     public static GameManager Instance
     {
         get
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject p1Text;
     public GameObject p2Text;
+    public Text notesText;
 
     public enum TPlayerInTurn
     {
@@ -85,6 +87,9 @@ public class GameManager : MonoBehaviour
   
     void Update()
     {
+        flechaAnim.SetInteger("Notes", currentNotes);
+        notesText.text = currentNotes.ToString();
+
         if(Input.GetKeyDown(KeyCode.Return))
         {
             EndTurn();
@@ -132,11 +137,18 @@ public class GameManager : MonoBehaviour
         return turnNumber;
     }
 
+    public void PlayMusic()
+    {
+        currentRow = 0;
+        listening = true;
+        Listen();
+    }
+
     void Listen()
     {
         for (int i = 0; i < grid.transform.GetChild(currentRow).transform.childCount; i++)
         {
-            if (grid.transform.GetChild(currentRow).GetChild(i).GetComponent<Cell>().hasNote)
+            if (grid.transform.GetChild(currentRow).GetChild(i).GetComponent<Cell>().composer)
             {
                 PlayInstrument(grid.transform.GetChild(currentRow).GetChild(i).gameObject);
             }
@@ -199,6 +211,11 @@ public class GameManager : MonoBehaviour
             return 2;
         }
         else return 1;
+    }
+
+    public void SetNotes()
+    {
+        currentNotes = startingNotes + turnNumber - 1;
     }
 
 }

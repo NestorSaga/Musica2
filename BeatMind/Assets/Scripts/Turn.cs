@@ -65,7 +65,7 @@ public class Turn : MonoBehaviour
         {
             //Lanzar evento de cambio de player
             //Volver todas las celdas a color negro
-
+            GameManager.Instance.PlayMusic();
             foreach (Transform a in grid.transform)
             {
                 for(int i = 0; i< a.transform.childCount; i++)
@@ -74,6 +74,8 @@ public class Turn : MonoBehaviour
                     a.transform.GetChild(i).GetComponent<Cell>().hasNote = false;
                 }                
             }
+
+            
 
             if (GameManager.Instance.getPlayerinTurn() == 1)
             {
@@ -90,6 +92,8 @@ public class Turn : MonoBehaviour
             //Reinicializar los materiales o el color al inicial
             GameManager.Instance.EndTurn();
         }
+        GameManager.Instance.SetNotes();
+
     }
 
 

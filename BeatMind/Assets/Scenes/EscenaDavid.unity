@@ -223,12 +223,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bebedab88ac0154c924f1f024daa8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flechaAnim: {fileID: 1755808992}
   TurnPrefab: {fileID: 5889078607242947228, guid: ea66c7470a360ac4ab7a3ee430d0a690,
     type: 3}
   startingNotes: 3
   turnNumber: 0
   p1Text: {fileID: 801877793}
   p2Text: {fileID: 1495541779}
+  notesText: {fileID: 811753293}
   currentTurn: {fileID: 0}
   currentNotes: 0
   p1Life: 0
