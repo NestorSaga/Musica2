@@ -68,8 +68,8 @@ public class Turn : MonoBehaviour
 
             foreach (Transform a in grid.transform)
             {                
-                a.transform.GetComponent<Cell>().GoBlack();
-                a.transform.GetComponent<Cell>().hasNote = false;            
+                a.transform.GetComponentInChildren<Cell>().GoBlack();
+                a.transform.GetComponentInChildren<Cell>().hasNote = false;            
             }
 
             if (GameManager.Instance.getPlayerinTurn() == 1)
@@ -78,18 +78,13 @@ public class Turn : MonoBehaviour
             }
             else GameManager.Instance.UpdateText("p1");
 
-                
-            }            
-
-
             turnState = TTurnState.RESOLVING;
-        }
+        }            
 
         else
         {
             //Lanzar evento de resolver
             //Reinicializar los materiales o el color al inicial
-
             GameManager.Instance.EndTurn();
         }
     }
