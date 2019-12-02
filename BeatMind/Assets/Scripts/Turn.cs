@@ -8,7 +8,8 @@ public class Turn : MonoBehaviour
     public GameObject[] cells;
     public GameObject cellPrefab;
     public float _distBetweenRows = 2; //La distancia a la que quieres que se instancie la siguiente fila. Habría que calcular cuánto mide el sprite siguiente y eso.
-    public Transform InitPos;
+    PopulateGrid grid;
+
     public enum TTurnState
     {
         COMPOSING, 
@@ -17,25 +18,17 @@ public class Turn : MonoBehaviour
 
     public TTurnState turnState;
 
-    private float _distance = 50f;
     private void Start()
     {
         turnState = TTurnState.COMPOSING;
+
         rows = GameManager.Instance.ReturnRows();       
 
-        cells = new GameObject[rows];
+        //cells = new GameObject[rows];
+ 
+        grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<PopulateGrid>();
 
-        float l_Dist = 0;
-
-        //TO DO: Sistema para arrastrar la grid  
-        InitPos = GameObject.Find("InitPos").transform;
-
-
-        for(int i = 0; i<cells.GetLength(0); i++)
-        {
-            cells[i] = Instantiate(cellPrefab, InitPos.position + new Vector3(0, l_Dist, -3), Quaternion.identity, transform);            
-            l_Dist += _distBetweenRows;
-        }
+        grid.Populate(rows);     
     }
 
     public string getState()

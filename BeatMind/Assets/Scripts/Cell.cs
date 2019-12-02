@@ -8,16 +8,18 @@ public class Cell : MonoBehaviour
     public bool composer = false;
     public bool resolver = false;
 
+    public Color unselected;
+
     private void Start()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+        this.gameObject.GetComponent<SpriteRenderer>().color = unselected;
     }
    
     private void OnMouseDown()
     {
         if (hasNote)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+            this.gameObject.GetComponent<SpriteRenderer>().color = unselected;
             //acceder al turno para sumarle notas
             GameManager.Instance.currentNotes++;
             if (GameManager.Instance.currentTurn.GetComponent<Turn>().getState() == "Composing")
@@ -26,6 +28,7 @@ public class Cell : MonoBehaviour
             }
             else resolver = false;
         }
+
         else //añadir condicion de si no te quedan notas no lo pongan
         {
             switch (this.gameObject.tag)
@@ -43,6 +46,7 @@ public class Cell : MonoBehaviour
                     this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                     break;
             }
+
             //acceder al turno para restarle notas
             GameManager.Instance.currentNotes--;
             if (GameManager.Instance.currentTurn.GetComponent<Turn>().getState() == "Composing")

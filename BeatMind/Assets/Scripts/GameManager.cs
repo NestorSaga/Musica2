@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     AudioManager audioManager;
+    PopulateGrid grid;
 
     public static GameManager Instance
     {
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
         listening = false;
 
         initialRowsNumber = Assignations.Instance.initialRowsNumber;
-
+        grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<PopulateGrid>();
         // El tempo tiene que depender de la dificultad:
         // EASY --> tempo = 4
         // MEDIUM --> tempo = 2
@@ -102,6 +103,8 @@ public class GameManager : MonoBehaviour
     public void EndTurn()
     {
         currentTurn.SetActive(false);
+        grid.clean();
+
         if(playerInTurn == TPlayerInTurn.P2)
         {
             turnNumber++;
@@ -123,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     public int ReturnRows()
     {
-        return turnNumber + initialRowsNumber - 1;
+        return turnNumber;
     }
 
     void Listen()

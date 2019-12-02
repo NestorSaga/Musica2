@@ -9,6 +9,7 @@ TagManager:
   - Choir
   - Trumpet
   - TurnButton
+  - Grid
   layers:
   - Default
   - TransparentFX
