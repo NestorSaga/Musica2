@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5474368535314277889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5474368535314277919}
+  - component: {fileID: 5474368535314277888}
+  - component: {fileID: 5474368535314277918}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5474368535314277919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474368535314277889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5474368535314277888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474368535314277889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bebedab88ac0154c924f1f024daa8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flechaAnim: {fileID: 0}
+  TurnPrefab: {fileID: 5889078607242947228, guid: ea66c7470a360ac4ab7a3ee430d0a690,
+    type: 3}
+  startingNotes: 3
+  turnNumber: 0
+  p1Text: {fileID: 0}
+  p2Text: {fileID: 0}
+  p1LifeText: {fileID: 0}
+  p2LifeText: {fileID: 0}
+  notesText: {fileID: 0}
+  currentTurn: {fileID: 0}
+  currentNotes: 0
+  p1Life: 0
+  p2Life: 0
+  tempo: 0
+--- !u!114 &5474368535314277918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474368535314277889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed1ab1bdfcaba243bf4ac433c96974d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialLife: 10
+  instrumentsNumber: 4
+  initialRowsNumber: 4

@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     public int p1Life;
     public int p2Life;
 
-    private int tempo;
+    [HideInInspector]public int tempo;
 
     //Script que assigni quantes notes te cada jugador a cada torn que es pot dir TurnAssignation()
     //Scipt que sigui Turn() que el que faci sigui inicialitzar la matriu de notes i guardar quines han estat col·locades
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         // EASY --> tempo = 4
         // MEDIUM --> tempo = 2
         // DIFFICULT --> tempo = 1
-        tempo = 1;
+        tempo = DifficultyManager.Instance.difficulty;
     }
 
   
