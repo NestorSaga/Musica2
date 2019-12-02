@@ -10,6 +10,8 @@ public class Turn : MonoBehaviour
     public float _distBetweenRows = 2; //La distancia a la que quieres que se instancie la siguiente fila. Habría que calcular cuánto mide el sprite siguiente y eso.
     PopulateGrid grid;
 
+    
+
     public enum TTurnState
     {
         COMPOSING, 
@@ -20,6 +22,8 @@ public class Turn : MonoBehaviour
 
     private void Start()
     {
+       
+
         turnState = TTurnState.COMPOSING;
 
         rows = GameManager.Instance.ReturnRows();       
@@ -28,7 +32,13 @@ public class Turn : MonoBehaviour
  
         grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<PopulateGrid>();
 
-        grid.Populate(rows);     
+        grid.Populate(rows);
+
+        if (GameManager.Instance.getPlayerinTurn() == 1)
+        {
+            GameManager.Instance.UpdateText("p1");
+        }
+        else GameManager.Instance.UpdateText("p2");
     }
 
     public string getState()
@@ -63,6 +73,12 @@ public class Turn : MonoBehaviour
                     this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().hasNote = false;
                 }
             }
+
+            if (GameManager.Instance.getPlayerinTurn() == 1)
+            {
+                GameManager.Instance.UpdateText("p2");
+            }
+            else GameManager.Instance.UpdateText("p1");
             turnState = TTurnState.RESOLVING;
         }
         else

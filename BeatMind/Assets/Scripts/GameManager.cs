@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     public int turnNumber = 1;
     private List<GameObject> turn = new List<GameObject>();
 
+    public GameObject p1Text;
+    public GameObject p2Text;
+
     public enum TPlayerInTurn
     {
         P1,
@@ -162,6 +165,21 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateText(string player)
+    {
+        if(player == "p1")
+        {
+            p1Text.SetActive(true);
+            p2Text.SetActive(false);
+        }
+        else
+        {
+            p2Text.SetActive(true);
+            p1Text.SetActive(false);
+        }
+    }
+
 
     IEnumerator PlayNotes()
     {
