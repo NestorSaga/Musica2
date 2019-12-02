@@ -12,7 +12,7 @@ public class Cell : MonoBehaviour
 
     private void Start()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().color = unselected;
+        GoBlack();
     }
    
     private void OnMouseDown()
@@ -56,6 +56,11 @@ public class Cell : MonoBehaviour
             else resolver = true;
         }
         hasNote = !hasNote;
+    }
+
+    public void GoBlack()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().color = unselected;
     }
 
     public void resetCell()

@@ -35,7 +35,6 @@ public class Turn : MonoBehaviour
     {
         if (turnState == TTurnState.COMPOSING)
         {
-            //Lanzar evento de cambio de player
             return "Composing";
         }
         else return "Resolving";
@@ -51,14 +50,19 @@ public class Turn : MonoBehaviour
     }
     public void ButtonChangesTurnState()
     {
+        Debug.Log("Estoy entrando aqui");
         if(turnState == TTurnState.COMPOSING)
         {
             //Lanzar evento de cambio de player
-
-
-
-
-
+            //Volver todas las celdas a color negro
+            for(int i = 0; i< this.transform.childCount; i++)
+            {
+                for(int j = 0; j < this.transform.GetChild(i).transform.childCount; j++)
+                {
+                    this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().GoBlack();
+                    this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().hasNote = false;
+                }
+            }
             turnState = TTurnState.RESOLVING;
         }
         else
