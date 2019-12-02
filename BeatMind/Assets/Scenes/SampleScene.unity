@@ -229,6 +229,8 @@ MonoBehaviour:
   turnNumber: 0
   currentTurn: {fileID: 0}
   currentNotes: 0
+  p1Life: 0
+  p2Life: 0
 --- !u!4 &103730576
 Transform:
   m_ObjectHideFlags: 0
