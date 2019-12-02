@@ -87,6 +87,7 @@ public class Turn : MonoBehaviour
         {
             //Lanzar evento de resolver
             //Reinicializar los materiales o el color al inicial
+            Resolve();
             GameManager.Instance.EndTurn();
         }
         GameManager.Instance.SetNotes();
@@ -100,12 +101,14 @@ public class Turn : MonoBehaviour
         {
             for (int j = 0; j < a.transform.childCount; j++)
             {
+                Debug.Log("Miro celda");
                 if (a.transform.GetChild(j).GetComponent<Cell>().resolver && a.transform.GetChild(j).GetComponent<Cell>().composer)
                 {
                     //guay, ha acertado input positivo
                 }
                 else if (!a.transform.GetChild(j).GetComponent<Cell>().resolver && a.transform.GetChild(j).GetComponent<Cell>().composer)
                 {
+                    Debug.Log("Pierdo vida");
                     //Estaba pero no la ha acertado input negativo, se resta vida
                     if (GameManager.Instance.getPlayerinTurn() == 1)
                     {
@@ -117,7 +120,7 @@ public class Turn : MonoBehaviour
                 {
                     //No hay un cagao, 
                 }
-                GameManager.Instance.currentTurn.transform.GetChild(j).GetComponent<Cell>().resetCell();
+                //GameManager.Instance.currentTurn.transform.GetChild(j).GetComponent<Cell>().resetCell();
             }
         }
     }

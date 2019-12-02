@@ -91,7 +91,9 @@ public class GameManager : MonoBehaviour
         // EASY --> tempo = 4
         // MEDIUM --> tempo = 2
         // DIFFICULT --> tempo = 1
-        tempo = DifficultyManager.Instance.difficulty;
+        if (DifficultyManager.Instance != null)
+            tempo = DifficultyManager.Instance.difficulty;
+        else tempo = 2;
     }
 
   
@@ -204,7 +206,7 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayNotes()
     {
         yield return new WaitForSeconds(tempo);
-        Debug.Log("Deberia hacer un sonido");
+
         audioManager.StopAll();
         if (currentRow != ReturnRows() + initialRowsNumber)
             Listen();
