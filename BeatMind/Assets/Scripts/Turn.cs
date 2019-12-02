@@ -70,6 +70,7 @@ public class Turn : MonoBehaviour
                     this.transform.GetChild(i).transform.GetChild(j).gameObject.GetComponent<Cell>().hasNote = false;
                 }
             }
+            turnState = TTurnState.RESOLVING;
         }
         else
         {
